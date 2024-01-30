@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search App</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- 1) MENSAJE ARRIBA  -->
+    <div class="div_inicio">
+        <h1 class="titulo_inicio">Puedes buscar imágenes que quieras y también visualizar tus propias imágenes descargadas</h1>
+    </div>
+
+    <!-- 2) BARRA DE MENU  -->
+    <header id="header_navegacion">
+        <div class="div_imagen_logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li>Buscar imagen</li>
+                <li>Ver imagen</li>
+                <li>Favoritos</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 3) OPCION SECCION BUSCAR IMG  -->
+    <section id="seccion_buscar">
+        <h1 class="titulo">Image search</h1>
+        <form id="form_buscar_imagenes">
+            <input type="text" id="input_buscar_imagen" placeholder="Buscar imagen">
+            <button type="submit" id="boton_buscar">Buscar</button>
+        </form>
+        <section id="seccion_imagenes"></section>
+        <div id="div_botones_atras_siguiente">
+            <button type="button" id="boton_atras">Atras</button>
+            <button type="button" id="boton_siguiente">Siguiente</button>
+        </div>
+    </section>
+
+    <!-- 4) OPCION SECCION SUBIR IMG  -->
+    <section id="seccion_subir" style="display: none;">
+        <h1 class="titulo">View Image</h1>
+        <section class="seccion_subir_ver">
+            <input type="file" id="input_subir_imagen" accept="image/*">
+            <div class="div_imagen_ver">
+                <img id="imagen_ver" src="logo.png">
+            </div>
+        </section>
+    </section>
+
+    <!-- 5.1) OPCION IMG FAVORITAS  -->
+    <section id="seccion_favoritos" style="display: none;">
+        <h1 class="titulo">Favorite Images</h1>
+        <div id="contenedor_favoritos"></div>
+    </section>
+
+    <!-- 5.2) OPCION MODAL - IMG  -->
+    <div id="div_modal">
+        <section class="seccion_opciones_nodal">
+            <i id="icon_heart" class="fa-solid fa-heart"></i>
+            <i id="icon_download" class="fa-solid fa-download"></i>
+        </section>
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <img id="imagen_modal">
+    </div>
+
+    <!-- 5.3) OPCION MODAL FAV - IMG  -->
+    <div id="div_modal_fv">
+        <section class="seccion_opciones_nodal_fv">
+            <i id="icon_trash" class="fa-solid fa-trash"></i>
+            <i id="icon_download_fv" class="fa-solid fa-download"></i>
+        </section>
+        <span class="close" onclick="cerrarModalFav()">&times;</span>
+        <img id="imagen_modal_fv">
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
